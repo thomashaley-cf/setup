@@ -1,6 +1,6 @@
 [user]
-    name = Tom Haley
-    email = thomas.haley@cardinalfinancial.com
+	name = Tom Haley
+	email = thomas.haley@cardinalfinancial.com
 [core]
     excludesfile = /Users/thaley/.gitignore_global
 
@@ -8,21 +8,18 @@
     path = ~/utils/gitalias/gitalias.txt
 
 [merge]
-    tool = sublimerge
-
-[mergetool "sublimerge"]
-    cmd = subl -n --wait \"$REMOTE\" \"$BASE\" \"$LOCAL\" \"$MERGED\" --command \"sublimerge_diff_views\"
-    trustExitCode = false
+    tool = sourcetrees
 
 [diff]
-    tool = sublimerge
+    tool = sourcetree 
 
-[difftool "sublimerge"]
-    cmd = subl -n --wait \"$REMOTE\" \"$LOCAL\" --command \"sublimerge_diff_views {\\\"left_read_only\\\": true, \\\"right_read_only\\\": true}\"
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
 
-#[difftool "sourcetree"]
-#	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-#	path = 
-#[mergetool "sourcetree"]
-#	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-#	trustExitCode = true
+[alias]
+	# recurisive checkout and pull
+    switch = "!git submodule foreach --recursive git checkout $(git branch-name)"

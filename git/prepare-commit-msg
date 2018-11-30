@@ -2,6 +2,8 @@
 
 taskId=$(git branch | grep '*' | cut -d '-' -f2)
 
-if [ -z "$firstLine"  ]; then
-    sed -i -r "1s/^/[#$taskId] /" $1
+if [ x = x${3} ]; then
+    if grep -v '\[#' $1; then
+      sed -i -r "1s/^/[#$taskId] /" $1
+    fi
 fi
