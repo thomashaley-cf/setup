@@ -5,7 +5,8 @@ git clone https://github.com/powerline/fonts.git ~/utils/fonts
 cd ~/utils/fonts
 ./install.sh
 
-# TODO: actually install fish
+brew install fish
+
 mkdir -p ~/.config/fish
 cp fish/config.fish ~/.config/fish/
 
@@ -15,3 +16,6 @@ mkdir -p ~/.config/fish/functions/
 
 # add complete scripts
 ./fish/complete.sh
+
+omf install bang-bang
+omf install bobthefish
