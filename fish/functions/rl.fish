@@ -1,3 +1,3 @@
 function rl
-	./gradlew run-lender
+	./gradlew run-lender 
 end
