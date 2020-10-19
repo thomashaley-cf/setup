@@ -1,3 +1,3 @@
 function tg
-    aws-vault exec bastion -- terragrunt $argv
+    aws-vault exec --prompt ykman bastion -- terragrunt $argv
 end

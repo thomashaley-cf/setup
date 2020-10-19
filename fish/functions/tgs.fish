@@ -4,9 +4,7 @@ function tgs
 
     if test (count $argv) -gt 1
         set others $argv[2..-1]
-    else
-        set others ""
     end
 
-    echo tg $argv[1] --terragrunt-source ~/Projects/$repo/$folder/ $others
+    tg $argv[1] --terragrunt-source ~/Projects/$repo/$folder/ $others
 end

@@ -1,3 +1,3 @@
 function tf
-    aws-vault exec bastion -- terraform $argv
+    aws-vault exec --prompt ykman bastion -- terraform $argv
 end
