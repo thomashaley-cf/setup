@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+# TODO: deprecated, this is a native installer now 
+# https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-mac.html
 
 brew postinstall python3
 

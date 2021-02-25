@@ -24,8 +24,10 @@
 	# recurisive checkout and pull
     switch = "!git submodule foreach --recursive git checkout $(git branch-name)"
 [init]
-	defaultBranch = ""
+	defaultBranch = main
 [commit]
 	gpgSign = false
 [tag]
 	forceSignAnnotated = false
+[pull]
+	rebase = true
