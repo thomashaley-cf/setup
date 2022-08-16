@@ -4,6 +4,7 @@
 git clone https://github.com/powerline/fonts.git ~/utils/fonts
 cd ~/utils/fonts
 ./install.sh
+cd -
 
 brew install fish
 
@@ -16,6 +17,8 @@ mkdir -p ~/.config/fish/functions/
 
 # add complete scripts
 ./fish/complete.sh
+
+curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
 
 omf install bang-bang
 omf install bobthefish

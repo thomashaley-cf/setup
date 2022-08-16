@@ -1,8 +1,12 @@
 [user]
 	name = Tom Haley
 	email = thomas.haley@cardinalfinancial.com
+
 [core]
     excludesfile = /Users/thaley/.gitignore_global
+
+[url "git@github.com:"]
+    insteadOf = "https://github.com/"
 
 [include]
     path = ~/utils/gitalias/gitalias.txt
@@ -13,18 +17,12 @@
 [diff]
     tool = sourcetree 
 
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
-
 [alias]
 	# recurisive checkout and pull
     switch = "!git submodule foreach --recursive git checkout $(git branch-name)"
 [init]
 	defaultBranch = main
+	templatedir = ~/.git_template
 [commit]
 	gpgSign = false
 [tag]
